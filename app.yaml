@@ -1,2 +1,19 @@
-runtime: nodejs
-env: flex
+runtime: nodejs20  # Specify the Node.js version; use the latest supported version
+env: standard  # 'standard' environment is often enough for static sites
+
+handlers:
+- url: /
+  static_files: dist/index.html
+  upload: dist/index.html
+
+- url: /(.*)
+  static_files: dist/\1
+  upload: dist/(.*)
+
+automatic_scaling:
+  min_idle_instances: automatic  # Adjust based on traffic expectations
+  max_idle_instances: automatic  # Adjust based on traffic expectations
+
+# Optional: Environment variables
+env_variables:
+  NODE_ENV: 'production'
