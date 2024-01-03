@@ -6,6 +6,8 @@ steps:
   # Build the application
   - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'build']
+    options:
+      machineType: 'N1_HIGHCPU_8
 
   # Deploy to App Engine
   - name: 'gcr.io/cloud-builders/gcloud'
