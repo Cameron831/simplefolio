@@ -10,6 +10,8 @@
   margin-top: -10rem;
   margin-bottom: -1px;
   color: $white-color;
+  width: 100vw; /* Ensure the section spans the entire viewport width */
+  margin-left: calc(-50vw + 50%); /* Center the section while making it full width */
 
   @include respond(tab-land) {
     padding: 10rem 0;
